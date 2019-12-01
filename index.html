@@ -51,7 +51,27 @@ html, body {
   color: white;
   font-family: monospace;
   padding: 4rem 0;
+  transition: transform 0.5s ease-out
 }
+
+.link:hover .void {
+  transform:scale(8) translateY(5rem);
+  transition: transform 3s ease-out
+  
+}
+
+.underline {
+  text-decoration:underline;
+}
+
+.scale {
+  font-size: 200%;
+}
+
+.link:hover .underline {
+  color: #d33;
+}
+
 
 @keyframes rotatehue{
   0%{
@@ -101,7 +121,7 @@ html, body {
     <div class="fullScreen  absoluteScreen grumbaum" id="grumbaum-image"></div>
   </div>
   <div class="fullScreen  absoluteScreen filter"></div>
-  <a class="link" href="https://www.facebook.com/bandVoidofCourse/?" target="_blank"><h1 class="void">Void of Course</h1></a>
+  <a class="link" href="https://www.facebook.com/bandVoidofCourse/?" target="_blank"><h1 class="void"><span class="underline scale">V</span>oid o<span class="underline">f</span> Cours<span class="underline scale">e</span></h1></a>
 </div>
 </body>
 </html>
