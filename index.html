@@ -27,19 +27,19 @@ html, body {
   background-size: 50%;
   background-repeat: no-repeat;
   filter: invert(80%);
-  animation: rotation 300s infinite alternate;
+  animation: rotation 100s infinite alternate;
   opacity:0.2;
 }
 
 .zoomer {
-  animation:zoominout 100s infinite;
+  animation:zoominout 400s infinite;
 }
 .filter {
   background-color: red;
   filter: hue-rotate(240deg);
   animation: rotatehue 200s infinite alternate;
   width: 100%;
-  opacity: 0.1;
+  opacity: 0.18;
 }
 
 
@@ -50,6 +50,7 @@ html, body {
   width: 100%;
   color: white;
   font-family: monospace;
+  padding: 4rem 0;
 }
 
 @keyframes rotatehue{
@@ -57,7 +58,7 @@ html, body {
     -webkit-filter:hue-rotate(0deg)
   }
   50%{
-    -webkit-filter:hue-rotate(90deg)
+    -webkit-filter:hue-rotate(359deg)
   }
   to {
     -webkit-filter:hue-rotate(0deg)
@@ -74,29 +75,33 @@ html, body {
 }
 
 @keyframes zoominout {
-    from {
-        transform: scale(0.2,0.2);
+    0% {
+        transform: scale(0.05,0.05);
     }
     
-    to {
-        transform: scale(1.1,1.2);
+    50% {
+        transform: scale(8,8);
+    }
+
+    100% {
+        transform: scale(0.05,0.05);
     }
 }
 
 
   </style>
-
-
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script src="./starfield.js"></script>
+<script src="./void.js"></script>
 </head>
 <body>
 <div class="fullScreen" id="fullScreen">
   <canvas class="fullScreen" id="starfield"></canvas>
   <div class="zoomer fullScreen absoluteScreen">
-    <div class="fullScreen  absoluteScreen grumbaum"></div>
+    <div class="fullScreen  absoluteScreen grumbaum" id="grumbaum-image"></div>
   </div>
   <div class="fullScreen  absoluteScreen filter"></div>
-  <h1 class="void">Void of Course</h1>
+  <a class="link" href="https://www.facebook.com/bandVoidofCourse/?" target="_blank"><h1 class="void">Void of Course</h1></a>
 </div>
-<script  src="./starfield.js"></script>
 </body>
 </html>

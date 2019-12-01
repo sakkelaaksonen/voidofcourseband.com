@@ -264,6 +264,3 @@ StarField.prototype.render = function(numStars, maxStarSpeed) {
             clearTimeout(id);
         };
 }());
-
-// Kick off!
-var starField = new StarField('fullScreen').render(333, 3);
