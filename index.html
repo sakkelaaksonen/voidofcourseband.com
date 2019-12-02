@@ -37,7 +37,7 @@
       .zoomer {
         animation: zoominout 400s infinite;
       }
-      .filter {
+      .huerotate {
         background-color: red;
         filter: hue-rotate(240deg);
         animation: rotatehue 200s infinite alternate;
@@ -48,6 +48,8 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-image: url("./img/voc.gif");
+        filter: blur(1px);
+
       }
 
       .void {
@@ -116,7 +118,7 @@
         }
 
         50% {
-          transform: scale(5, 5);
+          transform: scale(2, 2);
         }
 
         100% {
@@ -143,21 +145,94 @@
           opacity: 0.8;
         }
       }
+
+
+/* https://codepen.io/kikeur/pen/KpgYdG */
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 10s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 2s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 4s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 6s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 8s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  } 
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
-    <script src="./starfield.js"></script>
-    <script src="./void.js"></script>
+        <script src="./void.js"></script>
   </head>
   <body>
     <div class="fullScreen" id="fullScreen">
-      <canvas class="fullScreen" id="starfield"></canvas>
+      <div id="space">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+      </div>
+
       <div class="zoomer fullScreen absoluteScreen">
         <div
           class="fullScreen  absoluteScreen grumbaum"
           id="grumbaum-image"
         ></div>
+        <div
+          class="fullScreen  absoluteScreen void-bg"
+        ></div>
       </div>
-      <div class="fullScreen  absoluteScreen filter void-bg"></div>
+      <div class="fullScreen  absoluteScreen huerotate"></div>
       <a
         class="link"
         href="https://www.facebook.com/bandVoidofCourse/?"
