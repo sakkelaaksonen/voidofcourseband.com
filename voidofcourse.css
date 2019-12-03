@@ -1,4 +1,27 @@
-/* small desktops */
+@font-face {
+    font-family: 'League Gothic Condensed';
+    src: url('./font/leaguegothic-condensed-regular-webfont.eot');
+    src: url('./font/leaguegothic-condensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./font/leaguegothic-condensed-regular-webfont.woff') format('woff'),
+         url('./font/leaguegothic-condensed-regular-webfont.ttf') format('truetype'),
+         url('./font/leaguegothic-condensed-regular-webfont.svg#league_gothic_condensed-Rg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Blackout Two AM';
+    src: url('./font/blackout_two_am-webfont.eot');
+    src: url('./font/blackout_two_am-webfontt.eot?#iefix') format('embedded-opentype'),
+         url('./font/blackout_two_am-webfont.woff') format('woff'),
+         url('./font/blackout_two_am-webfontt.ttf') format('truetype'),
+         url('./font/blackout_two_am-webfont.svg#blackout_two_am-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html,
 body {
   overflow: hidden;
@@ -7,6 +30,8 @@ body {
   margin: 0px;
   width: 100%;
   height: 100%;
+  /*font-family: "League Gothic Condensed";*/
+  font-family: "Blackout Two AM";
 }
 
 .void-bg {
@@ -14,7 +39,6 @@ body {
   background-repeat: no-repeat;
   background-position: center 30vh;
   background-size: contain;
-
 }
 
 
@@ -69,18 +93,41 @@ body {
 
 h1.void {
   color: white;
-  font-family: monospace;
-  padding: 4rem 0;
   transform: scale(1);
   transition: transform 0.5s ease-out;
 }
 
 .voc-emoji {
-  font-size: 2vw;
+  font-size: 8vw;
+  transform: translateY(-8vh);
+  display: block;
 }
 
 .void-text {
+  opacity: 0.9;
+  display: block;
 }
+
+
+.void-text-mirror {
+  transform: rotateX(180deg);
+  margin-top:-1.5rem;
+} 
+
+.void-text-mirror {
+  font-size:97%;
+  opacity: 0.8;
+}
+
+.void-text-mirror + .void-text-mirror {
+  font-size:95%;
+  filter: invert(100%);
+  opacity: 0.7;
+}
+
+ /*.void-text-mirror {
+  display:none;
+ }
 
 /*
 
