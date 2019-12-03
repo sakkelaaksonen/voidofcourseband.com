@@ -3,242 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <title>Void of Course - band</title>
-    <style>
-      html,
-      body {
-        overflow: hidden;
-        background: #000;
-        padding: 0px;
-        margin: 0px;
-        width: 100%;
-        height: 100%;
-      }
-      .fullScreen {
-        height: 100%;
-      }
-
-      .absoluteScreen {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-
-      .grumbaum {
-        background-image: url("./img/grumbaum-rigby.png");
-        background-position: center center;
-        background-size: 50%;
-        background-repeat: no-repeat;
-        filter: invert(80%);
-        animation: rotation 100s infinite alternate;
-        opacity: 0.2;
-      }
-
-      .zoomer {
-        animation: zoominout 400s infinite;
-      }
-      .huerotate {
-        background-color: red;
-        filter: hue-rotate(240deg);
-        animation: rotatehue 200s infinite alternate;
-        opacity: 0.18;
-      }
-
-      .void-bg {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-image: url("./img/voc.gif");
-        filter: blur(1px);
-
-      }
-
-      .void {
-        position: absolute;
-        top: 0;
-        text-align: center;
-        width: 100%;
-        color: white;
-        font-family: monospace;
-        padding: 4rem 0;
-        transform: scale(1);
-        transition: transform 0.5s ease-out;
-      }
-
-      .void-text {
-        opacity: 0;
-      }
-
-      .link:hover .void {
-        transform: scale(3) translateY(5rem);
-        transition: transform 6s ease-out;
-      }
-
-      .link:hover .void-text {
-        transition: opacity 6s ease-out;
-        opacity: 0.8;
-        animation: getvoided 6s;
-      }
-
-      .underline {
-        text-decoration: underline;
-      }
-
-      .scale {
-        font-size: 200%;
-      }
-
-      .link:hover .underline {
-        color: #d33;
-      }
-
-      @keyframes rotatehue {
-        0% {
-          -webkit-filter: hue-rotate(0deg);
-        }
-        50% {
-          -webkit-filter: hue-rotate(359deg);
-        }
-        to {
-          -webkit-filter: hue-rotate(0deg);
-        }
-      }
-
-      @keyframes rotation {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(359deg);
-        }
-      }
-
-      @keyframes zoominout {
-        0% {
-          transform: scale(0.05, 0.05);
-        }
-
-        50% {
-          transform: scale(2, 2);
-        }
-
-        100% {
-          transform: scale(0.05, 0.05);
-        }
-      }
-
-
-      @keyframes getvoided {
-        0% {
-          opacity: 0;
-        }
-
-        50% {
-          opacity: 0;
-        }
-
-
-        90% {
-          opacity: 0.2;
-        }
-
-        100% {
-          opacity: 0.8;
-        }
-      }
-
-
-/* https://codepen.io/kikeur/pen/KpgYdG */
-#space, .stars {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.stars {
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: zoom 10s infinite;
-  opacity: 0;
-}
-
-.stars:nth-child(1) {
-  background-position: 50% 50%;
-  animation-delay: 0s;
-}
-.stars:nth-child(2) {
-  background-position: 20% 60%;
-  animation-delay: 2s;
-}
-.stars:nth-child(3) {
-  background-position: -20% -30%;
-  animation-delay: 4s;
-}
-.stars:nth-child(4) {
-  background-position: 40% -80%;
-  animation-delay: 6s;
-}
-.stars:nth-child(5) {
-  background-position: -20% 30%;
-  animation-delay: 8s;
-}
-
-@keyframes zoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-    animation-timing-function: ease-in;
-  } 
-  85% {
-    opacity: 1;
-    transform: scale(2.8);
-    animation-timing-function: linear;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3.5);
-  }
-}
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./voidofcourse.css" />
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
-        <script src="./void.js"></script>
+    <script src="./void.js"></script>
   </head>
   <body>
-    <div class="fullScreen" id="fullScreen">
-      <div id="space">
+    <div class="fullScreen">
+      <div class="space">
         <div class="stars"></div>
         <div class="stars"></div>
         <div class="stars"></div>
         <div class="stars"></div>
         <div class="stars"></div>
       </div>
-
-      <div class="zoomer fullScreen absoluteScreen">
-        <div
-          class="fullScreen  absoluteScreen grumbaum"
-          id="grumbaum-image"
-        ></div>
-        <div
-          class="fullScreen  absoluteScreen void-bg"
-        ></div>
+      <div class="grumbaum-rotate absoluteScreen">
+        <div class="absoluteScreen grumbaum grumbaum-zoomer" id="js-grumbaum-image"></div>
       </div>
-      <div class="fullScreen  absoluteScreen huerotate"></div>
-      <a
-        class="link"
-        href="https://www.facebook.com/bandVoidofCourse/?"
-        target="_blank"
+      <div class="absoluteScreen void-bg void-zoomer"></div>
+      <div class="absoluteScreen huerotate"></div>
+      <a class="link" href="https://www.facebook.com/bandVoidofCourse/?" target="_blank"
         ><h1 class="void">
-          🌑
+          <span class="voc-emoji">🌑</span>
           <br />
           <span class="void-text">Get Voided</span>
         </h1></a
