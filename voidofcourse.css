@@ -65,10 +65,12 @@ body {
 
 .grumbaum-zoomer {
   animation: grumbaumzoominout 400s infinite;
+  transform-origin:center center;
 }
 
 .grumbaum-rotate {
-  animation: rotateblock 500s infinite alternate;
+  animation: rotateblock 300s infinite alternate;
+  transform-origin:center center;
 }
 
 .void-zoomer {
