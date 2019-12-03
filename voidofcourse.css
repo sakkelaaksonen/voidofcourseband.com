@@ -1,3 +1,4 @@
+/* small desktops */
 html,
 body {
   overflow: hidden;
@@ -22,16 +23,12 @@ body {
 }
 
 .void-of-course {
-  display: inline-block;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 
 .void-of-course img {
   border-radius: 10000px;
   transform: translateY(-3rem);
+  width: 50vw;
 }
 
 .grumbaum-bg {
@@ -87,100 +84,6 @@ h1.void {
 }
 
 .void-text {
-  opacity: 0;
-}
-
-.link:hover .void {
-  transform: scale(3) translateY(5rem);
-  transition: transform 6s ease-out;
-}
-
-.link:hover .void-text {
-  transition: opacity 6s ease-out;
-  opacity: 1;
-  animation: getvoided 6s;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.scale {
-  font-size: 200%;
-}
-
-.link:hover .underline {
-  color: #d33;
-}
-
-@keyframes rotatehue {
-  0% {
-    -webkit-filter: hue-rotate(0deg);
-  }
-  50% {
-    -webkit-filter: hue-rotate(359deg);
-  }
-  to {
-    -webkit-filter: hue-rotate(0deg);
-  }
-}
-
-@keyframes rotateblock {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes grumbaumzoominout {
-  0% {
-    transform: scale(2, 2);
-  }
-
-  50% {
-    transform: scale(0.5, 0.5);
-  }
-
-  100% {
-    transform: scale(2, 2);
-  }
-}
-
-@keyframes voidzoominout {
-  0% {
-    transform: scale(0.3, 0.3);
-    opacity: 0.5;
-  }
-
-  50% {
-    transform: scale(1, 1);
-    opacity: 0.9;
-  }
-
-  100% {
-    transform: scale(0.3, 0.3);
-    opacity: 0.5;
-  }
-}
-
-@keyframes getvoided {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  90% {
-    opacity: 0.2;
-  }
-
-  100% {
-    opacity: 0.8;
-  }
 }
 
 /*
@@ -233,19 +136,22 @@ h1.void {
   animation-delay: 8s;
 }
 
-@keyframes starzoom {
-  0% {
-    opacity: 0;
+/*
+@media (max-width: 599px), @media (min-width: 600px) {
+  .void-of-course {
+  }
+
+  .void-of-course img {
     transform: scale(0.5);
-    animation-timing-function: ease-in;
-  }
-  85% {
-    opacity: 1;
-    transform: scale(2.8);
-    animation-timing-function: linear;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3.5);
+    animation: none;
   }
 }
+
+
+@media (min-width: 600px) {
+}
+
+
+@media (min-width: 900px) {
+}
+*/
