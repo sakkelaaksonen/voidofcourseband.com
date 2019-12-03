@@ -10,6 +10,7 @@ body {
 .fullScreen {
   height: 100vh;
   width: 100vw;
+  display: flex;
 }
 
 .absoluteScreen {
@@ -20,11 +21,20 @@ body {
   height: 100%;
 }
 
+.void-of-course {
+  display: inline-block;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.void-of-course img {
+  border-radius: 10000px;
+  transform: translateY(-3rem);
+}
+
 .grumbaum {
-  background-image: url('./img/grumbaum-rigby.png');
-  background-position: center center;
-  background-size: 50%;
-  background-repeat: no-repeat;
   filter: invert(80%);
   opacity: 0.2;
 }
@@ -38,7 +48,7 @@ body {
 }
 
 .void-zoomer {
-  animation: voidzoominout 400s infinite;
+  animation: voidzoominout 100s infinite;
 }
 
 .huerotate {
@@ -48,18 +58,16 @@ body {
   opacity: 0.18;
 }
 
-.void-bg {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url('./img/voc.gif');
-  filter: blur(1px);
-}
-
-.void {
+.link {
   position: absolute;
   top: 0;
   text-align: center;
   width: 100%;
+  text-decoration: none;
+  outline: none;
+}
+
+h1.void {
   color: white;
   font-family: monospace;
   padding: 4rem 0;
@@ -82,7 +90,7 @@ body {
 
 .link:hover .void-text {
   transition: opacity 6s ease-out;
-  opacity: 0.8;
+  opacity: 1;
   animation: getvoided 6s;
 }
 
@@ -135,15 +143,18 @@ body {
 
 @keyframes voidzoominout {
   0% {
-    transform: scale(0.05, 0.05);
+    transform: scale(0.3, 0.3);
+    opacity: 0.5;
   }
 
   50% {
     transform: scale(1, 1);
+    opacity: 0.9;
   }
 
   100% {
-    transform: scale(0.05, 0.05);
+    transform: scale(0.3, 0.3);
+    opacity: 0.5;
   }
 }
 
