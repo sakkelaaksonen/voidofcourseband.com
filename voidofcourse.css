@@ -166,7 +166,7 @@ h1.void {
   display: none;
 }
 /*@media screen and (orientation:portrait) { … }*/
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 899px) {
   body {
     background: white;
   }
