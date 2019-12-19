@@ -1,8 +1,2 @@
 User-agent: * 
 Allow: /index.html
-Disallow: /font
-Disallow: *.css
-Disallow: *.js
-Disallow: /node_modules
-Disallow: package*
-Disallow: *.txt
